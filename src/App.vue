@@ -29,7 +29,7 @@ import cardList from "./components/cardList.vue";
     </div>
   </section>
   <input-field />
-  <div class="mt-8">
+  <div class="mt-6">
     <card-list/>
 
   </div>

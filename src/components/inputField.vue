@@ -4,15 +4,15 @@ import { useTodoListStore } from "../store/useTodoListStore";
 
 const todo = ref("");
 const store = useTodoListStore();
-Ê
-function addItemAndClear(item) {
+
+function addItemAndClear(item){
   if (item.length === 0) {
     return;
   }
   // invokes function in the store:
   store.addTodo(item);
   todo.value = "";
-}
+};
 </script>
 
 
