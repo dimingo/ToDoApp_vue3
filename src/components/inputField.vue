@@ -25,7 +25,8 @@ function addItemAndClear(item) {
         leading-snug
         font-normal
         absolute
-        text-center text-slate-300
+        text-center 
+        text-slate-300
         absolute
         bg-transparent
         rounded
@@ -37,7 +38,7 @@ function addItemAndClear(item) {
         py-3
       "
     >
-      <i class="fas fa-lock"></i>
+
     </span>
     <form @submit.prevent="addItemAndClear(todo)" class="w-full flex">
       <input
@@ -51,6 +52,7 @@ function addItemAndClear(item) {
           placeholder-slate-500
           dark:placeholder-slate-400
           text-slate-600
+          dark:text-white
           relative
           bg-white bg-white
           rounded-l

@@ -13,38 +13,41 @@ const { mode } = storeToRefs(store);
 </script>
 
 <template>
-  <section class="py-6 min-w-[600px] flex max-w-1/3 items-start mt-6">
-    <div class="flex items-start w-full">
+  <section class="flex lg:max-w-1/3 sm:w-full">
+    <div class="flex w-full mb-5 ">
       <h1
         class="
-          text-4xl
-          font-semibold
+          lg:text-4xl
+          sm:text-xl
           flex-1
           tracking-widest
           justify-between
           text-white
           uppercase
+          whitespace-nowrap
+        
         "
       >
-        Todo
+        To do
       </h1>
+
       <img
-      v-show="!mode"
-        class="moon cursor-pointer py-4"
+        v-show="!mode"
+        class="cursor-pointer lg:h-8 lg:w-8 sm:w-5 sm:h-5 rounded-full hover:bg-slate-500"
         src="/images/ICON-MOON.SVG"
         alt="moon"
         @click="switchMode(!mode)"
       />
       <img
-      v-show="mode"
-        class="moon cursor-pointer py-4"
+        v-show="mode"
+        class="cursor-pointer lg:h-8 lg:w-8 sm:w-5 sm:h-5 rounded-full hover:bg-slate-500"
         src="/images/ICON-SUN.SVG"
         alt="moon"
         @click="switchMode(!mode)"
       />
     </div>
   </section>
-  <input-field />
+  <input-field  />
   <div class="mt-6">
     <card-list />
   </div>

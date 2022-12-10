@@ -18,20 +18,27 @@
     --dark-gray-blue: hsl(235, 11%, 52%);
     --very-dark-gray-blue: hsl(237, 14%, 26%);
   }
-  /* make div cover whole body */
 
-  body {
-    @apply text-[color:var(--very-dark-gray-blue)];
-    @apply text-[color:var(--very-dark-gray-blue)];
-    @apply bg-hero;
-    @apply dark:bg-hero-dark;
-    @apply bg-cover;
-    @apply bg-no-repeat;
-    @apply flex;
-    @apply items-center;
-    @apply justify-center;
-    @apply bg-[length:100%_250px];
-  }
+
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+div.main{
+  @apply bg-no-repeat;
+  @apply bg-auto;
+  @apply justify-center;
+  @apply flex;
+  @apply bg-[length:100%_250px];
+  @apply text-[color:var(--very-dark-gray-blue)];
+  @apply text-[color:var(--very-dark-gray-blue)];
+  @apply w-full;
+  @apply h-full;
+}
+
+
   h1 {
     @apply text-2xl;
   }
@@ -40,34 +47,3 @@
   }
 }
 
-/*Front-end Style Guide
-Layout
-The designs were created to the following widths:
-Mobile: 375px
-Desktop: 1440px
-Colors
-Primary
-Bright Blue: hsl(220, 98%, 61%)
-Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
-Neutral
-Light Theme
-Very Light Gray: hsl(0, 0%, 98%)
-Very Light Grayish Blue: hsl(236, 33%, 92%)
-Light Grayish Blue: hsl(233, 11%, 84%)
-Dark Grayish Blue: hsl(236, 9%, 61%)
-Very Dark Grayish Blue: hsl(235, 19%, 35%)
-Dark Theme
-Very Dark Blue: hsl(235, 21%, 11%)
-Very Dark Desaturated Blue: hsl(235, 24%, 19%)
-Light Grayish Blue: hsl(234, 39%, 85%)
-Light Grayish Blue (hover): hsl(236, 33%, 92%)
-Dark Grayish Blue: hsl(234, 11%, 52%)
-Very Dark Grayish Blue: hsl(233, 14%, 35%)
-Very Dark Grayish Blue: hsl(237, 14%, 26%)
-
-Typography
-Body Copy
-Font size: 19px
-Font
-Family: Rubik Sans
-Weights: 400, 700 */

@@ -18,6 +18,7 @@ const props = defineProps(["todoItem"]);
       from-purple-400
       rounded-full
       text-white
+      hover:bg-slate-400
       font-medium
       text-xs
       leading-tight
@@ -40,10 +41,14 @@ const props = defineProps(["todoItem"]);
       leading-tight
       h-5
       w-5
-      border dark: border-slate-600
-     
+      border
+      dark:
+      border-slate-600
+      hover:bg-gradient-to-tl
+      to-blue-400
+      via-indigo-400
+      from-purple-400
       rounded-full
-     
       dark:
       leading-tight
       uppercase

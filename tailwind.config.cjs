@@ -13,6 +13,9 @@ module.exports = {
     container: {
       center: true,
     },
+    container: {
+      center: true,
+    },
     backgroundSize: {
       'auto': 'auto',
       'cover': 'cover',
@@ -49,11 +52,12 @@ module.exports = {
       backgroundImage: {
         'hero': "url('/images/bg-desktop-light.jpg')",
         'hero-dark': "url('/images/bg-desktop-dark.jpg')",
-
+        'hero-mobile': "url('/images/BG-MOBILE-LIGHT.JPG')",
+        'hero-mobile-dark': "url('/images/BG-MOBILE-DARK.JPG')",
+        
       },
       screens: {
         'sm': '375px',
-        // => @media (min-width: 640px) { ... }
 
         'lg': '1440px',
 

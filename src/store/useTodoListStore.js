@@ -8,7 +8,7 @@ export const useTodoListStore = defineStore('todoList', {
         mode: true,
     }),
 
-    // getters
+   
     // actions
     actions: {
         switchMode(value){
