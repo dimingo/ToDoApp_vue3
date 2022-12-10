@@ -5,11 +5,16 @@ export const useTodoListStore = defineStore('todoList', {
     state: () => ({
         todoList: [],
         id: 0,
+        mode: true,
     }),
 
     // getters
     // actions
     actions: {
+        switchMode(value){
+            this.mode = value
+
+        },
         addTodo(item) {
             this.todoList.push({ item, id: this.id++, completed: false })
         },
@@ -24,11 +29,14 @@ export const useTodoListStore = defineStore('todoList', {
                 todo.completed = !todo.completed;
             }
         },
-        deleteTodo(itemID) {
+        deleteCompleted(isCompleted) {
             this.todoList = this.todoList.filter((object) => {
-                return object.id !== itemID
-            })
+                return object.completed !== isCompleted;
+            });
         },
+
+
+
 
 
     },

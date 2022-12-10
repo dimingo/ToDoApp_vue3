@@ -1,12 +1,25 @@
 <script setup>
 import radioBtn from "./radioButton.vue";
+import filterBtn from "./filterButton.vue";
 import { useTodoListStore } from "../store/useTodoListStore";
 import { storeToRefs } from "pinia";
+import { reactive, computed } from "vue";
 
 const store = useTodoListStore();
-// storeToRefs lets todoList keep reactivity:
 const { todoList } = storeToRefs(store);
 const { toggleCompleted } = store;
+const { deleteCompleted } = store;
+const state = reactive({ category: "all" });
+
+const filteredTasks = computed(() => {
+  return state.category === "all"
+    ? todoList.value
+    : todoList.value.filter((todoList) => todoList.completed == state.category);
+});
+const leftItems = computed(() =>
+  todoList.value.filter((todoList) => todoList.completed != true)
+);
+
 function deleteTask(index) {
   store.deleteTodo(index);
 }
@@ -15,10 +28,31 @@ function deleteTask(index) {
 
 <template>
   <div class="flex justify-center">
-    <div class="block rounded-lg shadow-lg bg-white w-full text-start">
+    <div
+      class="
+        block
+        rounded-lg
+        shadow-lg
+        dark:bg-[color:var(--dark-desaturated-blue)]
+        bg-white
+        w-full
+        text-start
+      "
+    >
       <div
-        class="relative py-3 px-6 border-b border-gray-300 flex flex-row"
-        v-for="todo in todoList"
+        class="
+          relative
+          rounded
+          hover:bg-slate-200
+          hover:text-slate-600
+          py-3
+          px-6
+          border-b border-gray-300
+          flex flex-row
+          dark:border-slate-700 dark:hover:bg-gray-100
+          dark:text-slate-200
+        "
+        v-for="todo in filteredTasks"
         :key="todo.id"
         :class="{ completed: todo.completed }"
       >
@@ -32,7 +66,9 @@ function deleteTask(index) {
         <button
           class="
             bg-white
-            hover:bg-gray-100
+            dark:
+            bg-transparent
+            hover:bg-[color:var(--gray-blue-hover)] hover:bg-gray-100
             text-gray-800
             font-medium
             p-3
@@ -47,66 +83,35 @@ function deleteTask(index) {
         </button>
       </div>
 
-      <div class="py-3 px-3 text-gray-600 flex">
-        <h3 class="p-2 text-sm"> items left</h3>
+      <div class="py-3 px-3 flex">
+        <h3 class="p-2 text-sm text-[color:var(--dark-gray-blue)]">
+          {{ leftItems.length }} items left
+        </h3>
         <div class="mx-auto">
-          <button
-            class="
-              bg-white
-              hover:bg-gray-100
-              text-gray-800
-              font-medium
-              py-2
-              px-4
-              ml-8
-              rounded
-            "
-          >
-            All
-          </button>
+          <filterBtn
+            class="font-medium"
+            title="All"
+            @filter="state.category = 'all'"
+          ></filterBtn>
+          <filterBtn
+            class="font-medium"
+            title="Active"
+            @filter="state.category = false"
+          ></filterBtn>
 
-          <button
-            class="
-              bg-white
-              hover:bg-gray-100
-              text-gray-800
-              font-medium
-              py-2
-              px-4
-              rounded
-            "
-          >
-            Active
-          </button>
-          <button
-            class="
-              bg-white
-              hover:bg-gray-100
-              text-gray-800
-              font-medium
-              py-2
-              px-4
-              rounded
-            "
-          >
-            Completed
-          </button>
+          <filterBtn
+            class="font-medium"
+            title="Completed"
+            @filter="state.category = true"
+          ></filterBtn>
         </div>
 
         <div>
-          <button
-            class="
-              bg-white
-              hover:bg-gray-100
-              text-gray-800
-              font-medium
-              py-2
-              px-4
-              rounded
-            "
-          >
-            Clear Completed
-          </button>
+          <filterBtn
+            class="font-thin"
+            title="Clear Completed"
+            @filter="deleteCompleted(true)"
+          ></filterBtn>
         </div>
       </div>
     </div>
@@ -115,5 +120,8 @@ function deleteTask(index) {
 <style  scoped>
 .completed {
   text-decoration: line-through;
+  text-decoration-color: var(--dark-gray-blue);
+  text-decoration-thickness: 2px;
+  color: var(--dark-gray-blue);
 }
 </style>

@@ -5,6 +5,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
+  darkMode:"class",
   theme: {
     fontFamily: {
       sans: ["Rubik", "sans-serif"],
@@ -47,6 +48,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero': "url('/images/bg-desktop-light.jpg')",
+        'hero-dark': "url('/images/bg-desktop-dark.jpg')",
 
       },
       screens: {

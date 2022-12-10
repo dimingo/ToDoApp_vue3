@@ -22,7 +22,7 @@ const props = defineProps(["todoItem"]);
       text-xs
       leading-tight
       uppercase
-      rounded
+      rounded-full
       shadow-md
       hover:bg-blue-700 hover:shadow-lg
       focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
@@ -40,15 +40,15 @@ const props = defineProps(["todoItem"]);
       leading-tight
       h-5
       w-5
-      border border-slate-200
+      border dark: border-slate-600
+     
       rounded-full
-      text-white
+     
+      dark:
       leading-tight
       uppercase
-      rounded
+      rounded-full
       shadow-md
     "
-  >
-    <img src="/images/ICON-CHECK.SVG" class="cursor-pointer" />
-  </button>
+  ></button>
 </template>

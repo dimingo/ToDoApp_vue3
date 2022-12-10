@@ -5,14 +5,14 @@ import { useTodoListStore } from "../store/useTodoListStore";
 const todo = ref("");
 const store = useTodoListStore();
 
-function addItemAndClear(item){
+function addItemAndClear(item) {
   if (item.length === 0) {
     return;
   }
   // invokes function in the store:
   store.addTodo(item);
   todo.value = "";
-};
+}
 </script>
 
 
@@ -43,11 +43,13 @@ function addItemAndClear(item){
       <input
         v-model="todo"
         type="text"
-        placeholder="Placeholder"
+        placeholder="Create a new todo..."
         class="
           px-3
           py-4
-          placeholder-slate-300
+          dark:bg-[color:var(--dark-desaturated-blue)]
+          placeholder-slate-500
+          dark:placeholder-slate-400
           text-slate-600
           relative
           bg-white bg-white
@@ -57,6 +59,7 @@ function addItemAndClear(item){
           shadow
           outline-none
           focus:outline-none focus:ring
+          
           w-full
           pl-10
         "

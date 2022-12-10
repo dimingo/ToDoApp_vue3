@@ -3,28 +3,42 @@
 @tailwind utilities;
 
 @layer base {
-    body {
+  :root {
+    /* light mode css variables */
+    --light-gray: hsl(0, 0%, 98%);
+    --light-gray-blue: hsl(236, 11%, 98%);
+    --dark-gray-blue: hsl(236, 9%, 61%);
+    --very-dark-gray-blue: hsl(235, 19%, 35%);
 
-        @apply bg-white text-gray-900;
-        @apply bg-hero;
-        @apply bg-cover;
-        @apply bg-no-repeat;
-        @apply flex;
-        @apply items-center;
-        @apply justify-center;
-        @apply bg-[length:100%_250px];
-       
-    }
-    h1 {
-      @apply text-2xl;
-    }
-    h2 {
-      @apply text-xl;
-    }
+    /* dark mode css variables */
+    --dark-blue: hsl(235, 21%, 11%);
+    --dark-desaturated-blue: hsl(235, 24%, 19%);
+    --gray-blue: hsl(234, 39%, 85%);
+    --gray-blue-hover: hsl(236, 33%, 92%);
+    --dark-gray-blue: hsl(235, 11%, 52%);
+    --very-dark-gray-blue: hsl(237, 14%, 26%);
   }
+  /* make div cover whole body */
 
-
-
+  body {
+    @apply text-[color:var(--very-dark-gray-blue)];
+    @apply text-[color:var(--very-dark-gray-blue)];
+    @apply bg-hero;
+    @apply dark:bg-hero-dark;
+    @apply bg-cover;
+    @apply bg-no-repeat;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply bg-[length:100%_250px];
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
 
 /*Front-end Style Guide
 Layout
