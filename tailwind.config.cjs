@@ -8,7 +8,7 @@ module.exports = {
   darkMode:"class",
   theme: {
     fontFamily: {
-      sans: ["Rubik", "sans-serif"],
+      sans: ["Rubik", "sans"],
     },
     container: {
       center: true,

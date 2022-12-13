@@ -19,9 +19,7 @@ const { mode } = storeToRefs(store);
         lg:bg-hero
         bg-slate-100
         lg:dark:bg-hero-dark
-        sm:bg-hero-mobile
-        sm:dark:bg-hero-mobile-dark
-       
+        sm:bg-hero-mobile sm:dark:bg-hero-mobile-dark
         w-full
         h-full
       "
@@ -31,5 +29,4 @@ const { mode } = storeToRefs(store);
       </div>
     </div>
   </div>
-  // => @media (min-width: 640px) { ... }
 </template>

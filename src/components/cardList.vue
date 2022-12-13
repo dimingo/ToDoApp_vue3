@@ -81,10 +81,18 @@ function deleteTask(index) {
       </div>
 
       <div class="py-3 px-3 flex">
-        <h3 class="p-2 text-sm text-[color:var(--dark-gray-blue)] sm:flex-1">
+        <h3
+          class="
+            p-2
+            text-sm
+            text-[color:var(--dark-gray-blue)]
+            sm:flex-1
+            lg:flex-initial
+          "
+        >
           {{ leftItems.length }} items left
         </h3>
-        <div class="mx-auto whitespace-nowrap lg:block sm:hidden">
+        <div class="mx-auto whitespace-nowrap lg:inline sm:hidden">
           <filterBtn
             class="font-medium"
             title="All"
@@ -116,7 +124,6 @@ function deleteTask(index) {
       class="
         mx-auto
         whitespace-nowrap
-        flex
         mt-3
         dark:bg-[color:var(--dark-desaturated-blue)]
         bg-white

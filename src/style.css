@@ -31,6 +31,7 @@ div.main{
   @apply bg-auto;
   @apply justify-center;
   @apply flex;
+  @apply font-thin;
   @apply bg-[length:100%_250px];
   @apply text-[color:var(--very-dark-gray-blue)];
   @apply text-[color:var(--very-dark-gray-blue)];
