@@ -1,9 +1,14 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useTodoListStore } from "../store/useTodoListStore";
 
 const todo = ref("");
 const store = useTodoListStore();
+const input = ref("input");
+onMounted(() => {
+
+  input.value.focus();
+})
 
 function addItemAndClear(item) {
   if (item.length === 0) {
@@ -25,8 +30,7 @@ function addItemAndClear(item) {
         leading-snug
         font-normal
         absolute
-        text-center 
-        text-slate-300
+        text-center text-slate-300
         absolute
         bg-transparent
         rounded
@@ -37,11 +41,12 @@ function addItemAndClear(item) {
         pl-3
         py-3
       "
-    >
-
+    > 
     </span>
     <form @submit.prevent="addItemAndClear(todo)" class="w-full flex">
       <input
+      ref="input"
+        
         v-model="todo"
         type="text"
         placeholder="Create a new todo..."
@@ -61,13 +66,13 @@ function addItemAndClear(item) {
           shadow
           outline-none
           focus:outline-none focus:ring
-          
           w-full
           pl-10
         "
       />
 
       <button
+        type="submit"
         class="
           bg-gradient-to-tr
           from-indigo-500

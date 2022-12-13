@@ -12,6 +12,7 @@ function btnClick() {
 
 <template>
   <button
+  data-cy="title"
     class="
       dark:bg-[color:var(--dark-desaturated-blue)]
       bg-white

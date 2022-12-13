@@ -34,14 +34,14 @@ const { mode } = storeToRefs(store);
       <img
         v-show="!mode"
         class="cursor-pointer lg:h-8 lg:w-8 sm:w-5 sm:h-5 rounded-full hover:bg-slate-500"
-        src="/images/ICON-MOON.SVG"
+        src="/ICON-MOON.SVG"
         alt="moon"
         @click="switchMode(!mode)"
       />
       <img
         v-show="mode"
         class="cursor-pointer lg:h-8 lg:w-8 sm:w-5 sm:h-5 rounded-full hover:bg-slate-500"
-        src="/images/ICON-SUN.SVG"
+        src="/ICON-SUN.SVG"
         alt="moon"
         @click="switchMode(!mode)"
       />
