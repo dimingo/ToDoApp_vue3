@@ -65,8 +65,7 @@ function deleteTask(index) {
           class="
             fill-slate-600
             hover:fill-blue-700
-            dark:fill-slate-600
-            dark:hover:fill-blue-600
+            dark:fill-slate-600 dark:hover:fill-blue-600
             bg-transparent
             text-gray-800
             font-medium
@@ -100,18 +99,18 @@ function deleteTask(index) {
         </h3>
         <div class="mx-auto whitespace-nowrap lg:inline sm:hidden">
           <filterBtn
-            class="font-medium"
+            class="active:text-blue-600"
             title="All"
             @filter="state.category = 'all'"
           ></filterBtn>
           <filterBtn
-            class="font-medium"
+            class="active:text-blue-600"
             title="Active"
             @filter="state.category = false"
           ></filterBtn>
 
           <filterBtn
-            class="font-medium"
+            class="active:text-blue-600"
             title="Completed"
             @filter="state.category = true"
           ></filterBtn>

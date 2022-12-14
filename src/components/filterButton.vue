@@ -12,13 +12,15 @@ function btnClick() {
 
 <template>
   <button
-  data-cy="title"
+    data-cy="title"
     class="
       dark:bg-[color:var(--dark-desaturated-blue)]
       bg-white
-      active:text-blue-500
+      font-medium
       hover:text-blue-500
+      dark:hover:text-blue-500
       text-[color:var(--dark-gray-blue)]
+      active:text-blue-dark
       py-2
       px-4
       rounded

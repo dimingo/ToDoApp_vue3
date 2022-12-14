@@ -5,7 +5,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  darkMode:"class",
+  darkMode: "class",
   theme: {
     fontFamily: {
       sans: ["Rubik", "sans-serif"],
@@ -54,7 +54,7 @@ module.exports = {
         'hero-dark': "url('/images/bg-desktop-dark.jpg')",
         'hero-mobile': "url('/images/BG-MOBILE-LIGHT.JPG')",
         'hero-mobile-dark': "url('/images/BG-MOBILE-DARK.JPG')",
-        
+
       },
       screens: {
         'sm': '375px',
@@ -64,5 +64,10 @@ module.exports = {
       }
     },
   },
+  variants: {
+    text: ['responsive','hover','focus','active'],
+  },
+
+
   plugins: [],
 }
