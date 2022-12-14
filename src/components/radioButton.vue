@@ -30,7 +30,7 @@ const props = defineProps(["todoItem"]);
       active:bg-blue-800 active:shadow-lg
     "
   >
-    <img src="/images/ICON-CHECK.SVG" class="cursor-pointer" />
+    <img src="/images/check.svg" class="cursor-pointer" />
   </button>
   <button
     v-else
@@ -44,10 +44,7 @@ const props = defineProps(["todoItem"]);
       border
       dark:
       border-slate-600
-      hover:bg-gradient-to-tl
-      to-blue-400
-      via-indigo-400
-      from-purple-400
+      hover:border hover:border-fuchsia-700
       rounded-full
       dark:
       leading-tight

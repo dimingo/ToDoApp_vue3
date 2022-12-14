@@ -52,7 +52,8 @@ function addItemAndClear(item) {
         placeholder="Create a new todo..."
         class="
           px-3
-          py-4
+          py-6
+          rounded-md
           dark:bg-[color:var(--dark-desaturated-blue)]
           placeholder-slate-500
           dark:placeholder-slate-400
@@ -71,32 +72,6 @@ function addItemAndClear(item) {
         "
       />
 
-      <button
-        type="submit"
-        class="
-          bg-gradient-to-tr
-          from-indigo-500
-          via-purple-500
-          to-pink-500
-          hover:via-purple-300
-          font-bold
-          uppercase
-          text-xs
-          px-4
-          py-2
-          rounded-r
-          shadow
-          text-white
-          hover:shadow-md
-          outline-none
-          focus:outline-none
-          ease-linear
-          transition-all
-          duration-150
-        "
-      >
-        add
-      </button>
     </form>
   </div>
 </template>

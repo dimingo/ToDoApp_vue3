@@ -61,23 +61,28 @@ function deleteTask(index) {
         ></radio-btn
         ><span class="p-2">{{ todo.item }}</span>
 
-        <button
+        <svg
           class="
-            bg-white
-            dark:
+            fill-slate-600
+            hover:fill-blue-700
+            dark:fill-slate-600
+            dark:hover:fill-blue-600
             bg-transparent
             text-gray-800
             font-medium
-            p-3
-            rounded-full
-            px-auto
+            m-3
             absolute
             right-4
           "
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
           @click="deleteTask(todo.id)"
         >
-          <img src="/images/ICON-CROSS.SVG" />
-        </button>
+          <path
+            d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+          />
+        </svg>
       </div>
 
       <div class="py-3 px-3 flex">
@@ -90,7 +95,8 @@ function deleteTask(index) {
             lg:flex-initial
           "
         >
-          {{ leftItems.length }} items left
+          {{ leftItems.length }}
+          {{ leftItems.length > 1 ? "items left" : "item left" }}
         </h3>
         <div class="mx-auto whitespace-nowrap lg:inline sm:hidden">
           <filterBtn
