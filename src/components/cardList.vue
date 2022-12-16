@@ -4,6 +4,7 @@ import filterBtn from "./filterButton.vue";
 import { useTodoListStore } from "../store/useTodoListStore";
 import { storeToRefs } from "pinia";
 import { reactive, computed } from "vue";
+import VueDraggable from "vue-draggable";
 
 const store = useTodoListStore();
 const { todoList } = storeToRefs(store);
@@ -16,6 +17,23 @@ const filteredTasks = computed(() => {
     ? todoList.value
     : todoList.value.filter((todoList) => todoList.completed == state.category);
 });
+const startDrag = (event, item) => {
+  event.dataTransfer.dropEffect = "move";
+  event.dataTransfer.effectAllowed = "move";
+  event.dataTransfer.setData("ItemID", item.id);
+};
+
+const onDrop = (event, id) => {
+  const draggedId = event.dataTransfer.getData("itemID");
+  const draggedItem = todoList.value.find((item) => item.id == draggedId);
+  const targetItem = todoList.value.find((item) => item.id === +id);
+
+  const draggedItemIndex = todoList.value.indexOf(draggedItem);
+  const targetItemIndex = todoList.value.indexOf(targetItem);
+
+  todoList.value.splice(draggedItemIndex, 1);
+  todoList.value.splice(targetItemIndex, 0, draggedItem);
+};
 const leftItems = computed(() =>
   todoList.value.filter((todoList) => todoList.completed != true)
 );
@@ -50,9 +68,15 @@ function deleteTask(index) {
           flex flex-row
           dark:border-slate-700 dark:hover:bg-gray-100 dark:text-slate-500
         "
+        draggable="true"
         v-for="todo in filteredTasks"
         :key="todo.id"
         :class="{ completed: todo.completed }"
+        v-draggable="{ group: 'todos', animation: 100 }"
+        @dragstart="startDrag($event, todo)"
+        @drop="onDrop($event, todo.id)"
+        @dragenter.prevent
+        @dragover.prevent
       >
         <radio-btn
           class="m-2"
