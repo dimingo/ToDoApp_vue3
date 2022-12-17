@@ -3,9 +3,7 @@ import { setActivePinia, createPinia } from 'pinia'
 import { useTodoListStore } from './store/useTodoListStore'
 
 beforeEach(() => {
-  // creates a fresh pinia and make it active so it's automatically picked
-  // up by any useStore() call without having to pass it to it:
-  // `useStore(pinia)`
+
   setActivePinia(createPinia())
   
   cy.mount(App)

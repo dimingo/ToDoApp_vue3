@@ -45,7 +45,7 @@ function deleteTask(index) {
 
 
 <template>
-  <div class="lg:flex justify-center">
+  <div class="justify-center max-h-100%">
     <div
       class="
         block
@@ -179,6 +179,9 @@ function deleteTask(index) {
         title="Completed"
         @filter="state.category = true"
       ></filterBtn>
+    </div>
+    <div class="flex text-slate-600 justify-center p-2">
+      Drag and Drop to reoder list
     </div>
   </div>
 </template>

@@ -24,7 +24,7 @@ const { mode } = storeToRefs(store);
           justify-between
           text-white
           uppercase
-          font-semibold
+          
           whitespace-nowrap
         "
       >

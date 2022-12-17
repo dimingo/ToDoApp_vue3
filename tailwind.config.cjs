@@ -65,7 +65,7 @@ module.exports = {
     },
   },
   variants: {
-    text: ['responsive','hover','focus','active'],
+    text: ['responsive', 'hover', 'focus', 'active'],
   },
 
 
