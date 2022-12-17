@@ -4,7 +4,6 @@ import filterBtn from "./filterButton.vue";
 import { useTodoListStore } from "../store/useTodoListStore";
 import { storeToRefs } from "pinia";
 import { reactive, computed } from "vue";
-import VueDraggable from "vue-draggable";
 
 const store = useTodoListStore();
 const { todoList } = storeToRefs(store);
